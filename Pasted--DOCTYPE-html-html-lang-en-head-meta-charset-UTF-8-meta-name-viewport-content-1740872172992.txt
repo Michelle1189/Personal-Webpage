@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michelle Zhang - Data Scientist & ML Engineer</title>
+    <style>
+        /* Base styles and reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Containers */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #5c6bc0;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #5c6bc0;
+        }
+        
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 70px 0;
+            min-height: 80vh;
+        }
+        
+        .hero-content {
+            flex: 1;
+            padding-right: 40px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .highlight {
+            color: #5c6bc0;
+            font-weight: 700;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #5c6bc0;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-right: 15px;
+            box-shadow: 0 4px 15px rgba(92, 107, 192, 0.2);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(92, 107, 192, 0.3);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: #5c6bc0;
+            border: 2px solid #5c6bc0;
+        }
+        
+        /* Skills Section */
+        .skills {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .section-header p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .skill-category {
+            flex: 0 0 48%;
+            margin-bottom: 40px;
+        }
+        
+        .skill-category h3 {
+            margin-bottom: 20px;
+            color: #5c6bc0;
+            font-size: 24px;
+        }
+        
+        .skill-tag {
+            display: inline-block;
+            background-color: #eef2ff;
+            color: #5c6bc0;
+            padding: 8px 16px;
+            border-radius: 50px;
+            margin: 5px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        /* Experience Section */
+        .experience {
+            padding: 80px 0;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #eaeaea;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 40px;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #5c6bc0;
+            border-radius: 50%;
+            top: 20px;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+            text-align: right;
+        }
+        
+        .right {
+            left: 50%;
+            text-align: left;
+        }
+        
+        .left::after {
+            right: -10px;
+        }
+        
+        .right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .timeline-content h3 {
+            color: #5c6bc0;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-content h4 {
+            color: #666;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .timeline-content p {
+            color: #666;
+        }
+
+        /* Project Section */
+        .projects {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .project-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .project-card {
+            flex: 0 0 31%;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            padding: 25px;
+            margin-bottom: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-card h3 {
+            color: #5c6bc0;
+            margin-bottom: 15px;
+        }
+        
+        .project-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .date-badge {
+            display: inline-block;
+            background-color: #eef2ff;
+            color: #5c6bc0;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .contact-method i {
+            font-size: 24px;
+            color: #5c6bc0;
+            margin-right: 15px;
+        }
+        
+        .contact-method a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-method a:hover {
+            color: #5c6bc0;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #5c6bc0;
+        }
+        
+        /* Responsive Design */
+        @media screen and (max-width: 992px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 0;
+            }
+            
+            .hero-content {
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+            
+            .skill-category {
+                flex: 0 0 100%;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+                text-align: left;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+            
+            .left::after, .right::after {
+                left: 21px;
+            }
+            
+            .right {
+                left: 0;
+            }
+            
+            .project-card {
+                flex: 0 0 48%;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .project-card {
+                flex: 0 0 100%;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero-content, .hero-image, .section-header, .skill-category, 
+        .timeline-item, .project-card, .contact-info {
+            animation: fadeIn 1s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">MZ</div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hi, I'm <span class="highlight">Michelle Zhang</span></h1>
+                <p>Data Scientist & Machine Learning Engineer specializing in AI-driven solutions. Currently pursuing MS in Information Systems at the University of Washington. Self-driven problem-solver with strong analytical thinking, delivering actionable data insights for business decision-making.</p>
+                <a href="#contact" class="btn">Contact Me</a>
+                <a href="#experience" class="btn btn-secondary">View My Work</a>
+            </div>
+            <div class="hero-image">
+                <img src="/api/placeholder/400/400" alt="placeholder">
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2>My Skill Set</h2>
+                <p>A combination of technical expertise and domain knowledge</p>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Analytical Tools</h3>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">Excel</span>
+                    <span class="skill-tag">Tableau</span>
+                    <span class="skill-tag">Power BI</span>
+                    <span class="skill-tag">R</span>
+                    <span class="skill-tag">MATLAB</span>
+                </div>
+                <div class="skill-category">
+                    <h3>Knowledge Areas</h3>
+                    <span class="skill-tag">Machine Learning</span>
+                    <span class="skill-tag">Large Language Models (LLM)</span>
+                    <span class="skill-tag">Natural Language Processing</span>
+                    <span class="skill-tag">Data Analysis</span>
+                    <span class="skill-tag">Data Visualization</span>
+                    <span class="skill-tag">Statistical Forecasting</span>
+                    <span class="skill-tag">Predictive Modeling</span>
+                    <span class="skill-tag">Linear Optimization</span>
+                    <span class="skill-tag">Business Analytics</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2>Work Experience</h2>
+                <p>My professional journey across diverse industries</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="date-badge">03/2023 - 10/2023</span>
+                        <h3>Machine Learning Intern</h3>
+                        <h4>Beijing Yiwei Bioscience Co., Ltd - Beijing, China</h4>
+                        <p>Led research on large language models for clinical trial forms generation. Deployed 5 mainstream GPT models, reduced server resource usage by 25%, and increased translation accuracy by 30%.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <span class="date-badge">04/2022 - 10/2022</span>
+                        <h3>Data Analyst Intern</h3>
+                        <h4>Rongma Consulting Co., Ltd. - Beijing, China</h4>
+                        <p>Improved operational efficiency by identifying bottlenecks and digitalizing workflows. Managed a dynamic Excel database of 50,000+ customers and created interactive dashboards with PowerBI.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>Project Portfolio</h2>
+                <p>Showcasing my research and technical applications</p>
+            </div>
+            <div class="project-cards">
+                <div class="project-card">
+                    <span class="date-badge">09/2024 - 12/2024</span>
+                    <h3>Yelp Business Success Prediction</h3>
+                    <p>Applied data mining techniques to predict Yelp ratings. Engineered features from a 150,000-row dataset and achieved 67.6% model accuracy using classification trees (CART) and SMOTE.</p>
+                </div>
+                <div class="project-card">
+                    <span class="date-badge">04/2023 - 06/2023</span>
+                    <h3>University Graduation Rates Prediction</h3>
+                    <p>Led hypothesis development and identified key variables impacting graduation rates through OLS regression. Utilized multiple variable linear regression and A/B testing to validate model accuracy.</p>
+                </div>
+                <div class="project-card">
+                    <span class="date-badge">01/2017 - 01/2020</span>
+                    <h3>FIRST Robotics Competition</h3>
+                    <p>Served as lead strategist and scout. Developed Excel database for 300+ global teams and created real-time Tableau dashboards. Boosted data entry efficiency by 400% through implementation of scanning tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Interested in collaboration? Let's connect!</p>
+            </div>
+            <div class="contact-info">
+                <div class="contact-method">
+                    <i>📧</i>
+                    <a href="mailto:michelle.zhang1189@gmail.com">michelle.zhang1189@gmail.com</a>
+                </div>
+                <div class="contact-method">
+                    <i>📱</i>
+                    <a href="tel:4255997547">425-599-7547</a>
+                </div>
+                <div class="contact-method">
+                    <i>📍</i>
+                    <span>Seattle, Washington</span>
+                </div>
+                <div class="contact-method">
+                    <i>🔗</i>
+                    <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Michelle Zhang. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
